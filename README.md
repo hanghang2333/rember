@@ -1,6 +1,8 @@
 # happytrans_web
 测试网址:http://66.42.62.255:8002/
 备注:
+
+
 1.查看防火墙版本号
 firewall-cmd --version
 centos 7.3是自带firewall防火墙，提示版本号。
@@ -16,3 +18,6 @@ firewall-cmd --zone=public --add-port=80/tcp --permanent
 4.重启防火墙
 systemctl restart firewalld
 
+python manage.py makemigrations
+
+python manage.py migrate
