@@ -12,6 +12,7 @@ from django.conf import settings
 def updata(request):
     print(request)
     if request.FILES:
+        print('++++++'+request)
         if not os.path.exists('upload'):
             os.makedirs('upload')
         imgname = str(request.FILES.get('fileUpload'))
@@ -38,36 +39,3 @@ def home(request):
     #print('++++----------+++',img)
     #return render(request, 'home1.html', {'img':img})
     return render(request,'home.html')
-'''
-def receive_data(request):
-    if request.GET:
-        #print('有提交')
-        pass
-    s1 = request.GET.get('putonghua',None)
-    s2 = request.GET.get('fangyan',None)
-    #print('s1&s2:',s1,s2)
-    #print(request.GET)
-    if request.GET.get('fanyi') != None:
-        s2 = model.convert(s1)
-        return render(request,'home.html',{'string1':s1,'string2':s2})
-    elif request.GET.get('tijiao')!=None:
-        output.write('<>'+s1+'<+>'+s2+'<>'+'\n')
-        output.flush()
-        return render(request,'home.html',{'string1':s1,'string2':s2})
-    else:
-        idx = int(random.random()*s_num)
-        s1 = sentences[idx]
-        s2 = model.convert(s1)        
-        return render(request,'home.html',{'string1':s1,'string2':s2})
-def add(request):
-    a = request.GET['a']
-    b = request.GET['b']
-    c = int(a)+int(b)
-    return HttpResponse(str(c))
-def add2(request,a,b):
-    c = int(a)+int(b)
-    return HttpResponse(str(c))
-
-def old_add2_redirect(request,a,b):
-    return HttpResponseRedirect(reverse('add2',args={a,b}))
-'''
