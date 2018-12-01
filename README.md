@@ -1,5 +1,5 @@
 # happytrans_web
-测试网址:http://66.42.62.255:8001/
+测试网址:http://66.42.62.255:8002/
 备注:
 1.查看防火墙版本号
 firewall-cmd --version
